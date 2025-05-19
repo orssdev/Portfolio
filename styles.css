@@ -103,3 +103,24 @@ a:hover {
     width: 500px;
     text-align: center;
 }
+
+#bio-content-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.bio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    gap: 25px;
+}
+
+#bio-text {
+    text-align: center;
+    width: 75%;
+}
