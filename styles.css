@@ -35,7 +35,7 @@ footer {
 
 section {
     width: 100%;
-    min-height: 700px;
+    min-height: 800px;
     height: 100vh;
     padding-top: 50px;
     background-color: aliceblue;
@@ -121,6 +121,49 @@ a:hover {
 }
 
 #bio-text {
-    text-align: center;
+    text-align: justify;
     width: 75%;
+}
+
+#skills {
+    background-color: black;
+    color: white;
+}
+
+#skills-content-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#skill-box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 25px;
+}
+
+.skill-box {
+    height: 300px;
+    width: 300px;
+    border: 2px solid red;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+}
+
+.icon {
+    color: red;
+    font-size: 150px;
 }
