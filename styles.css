@@ -4,6 +4,10 @@
     text-decoration: none;
 }
 
+html {
+      scroll-behavior: smooth;
+}
+
 body {
     background-color: black;
     color: white;
@@ -13,12 +17,20 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #444444;
+    background-color: black;
     height: 50px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 2px solid red;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    color: white;
 }
 
 section {
@@ -28,8 +40,66 @@ section {
     padding-top: 50px;
     background-color: aliceblue;
     color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
 }
 
 a {
     color: white;
+}
+
+a:hover {
+    color: red;
+}
+
+#home {
+    background: linear-gradient(-45deg, darkred, black, darkred, black);
+    background-size: 400% 400%;
+    animation: gradientBG 6s ease infinite;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#home-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#me-container {
+    border: 1px solid red;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+}
+
+#me {
+    width: 100%;
+}
+
+#home-paragraph {
+    width: 500px;
+    text-align: center;
 }
