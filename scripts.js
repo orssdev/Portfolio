@@ -1,7 +1,10 @@
-const sections = document.querySelectorAll('header nav a');
+const github = document.getElementById('github');
+const linkedin = document.getElementById('linkedin');
 
-sections.forEach(section => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-    });
+github.addEventListener('click', e => {
+    window.location.href = "https://github.com/orssdev";
+});
+
+linkedin.addEventListener('click', e => {
+    window.location.href = "https://www.linkedin.com/in/orssdev";
 });

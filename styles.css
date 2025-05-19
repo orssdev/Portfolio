@@ -38,7 +38,7 @@ section {
     min-height: 800px;
     height: 100vh;
     padding-top: 50px;
-    background-color: aliceblue;
+    background-color: white;
     color: black;
     display: flex;
     align-items: center;
@@ -88,8 +88,8 @@ a:hover {
 }
 
 #me-container {
-    border: 1px solid red;
-    border-radius: 50%;
+    border: 1px solid #ff0000;
+    border-radius: 15px;
     overflow: hidden;
     height: 300px;
     width: 300px;
@@ -137,10 +137,10 @@ a:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
 }
 
-#skill-box-container {
+#box-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -150,9 +150,9 @@ a:hover {
     gap: 25px;
 }
 
-.skill-box {
-    height: 300px;
-    width: 300px;
+.box {
+    height: 20vw;
+    width: 20vw;
     border: 2px solid red;
     border-radius: 15px;
     display: flex;
@@ -165,5 +165,20 @@ a:hover {
 
 .icon {
     color: red;
-    font-size: 150px;
+    font-size: 10vw;
+}
+
+#contact-content-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#github, #linkedin {
+    background-color: black;
+    color: white;
 }
