@@ -187,3 +187,7 @@ a:hover {
     font-family: "Geist Mono", monospace;
     font-size: 3vw;
 }
+
+P {
+    line-height: 2;
+}
