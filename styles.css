@@ -182,3 +182,8 @@ a:hover {
     background-color: black;
     color: white;
 }
+
+.title-h1 {
+    font-family: "Geist Mono", monospace;
+    font-size: 3vw;
+}
