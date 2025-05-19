@@ -196,3 +196,7 @@ a:hover {
 P {
     line-height: 2;
 }
+
+#bio-picture {
+    width: 100%;
+}
