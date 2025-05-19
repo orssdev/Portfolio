@@ -183,6 +183,11 @@ a:hover {
     color: white;
 }
 
+#github:hover, #linkedin:hover {
+    background-color: white;
+    color: black;
+}
+
 .title-h1 {
     font-family: "Geist Mono", monospace;
     font-size: 3vw;
