@@ -31,6 +31,9 @@ header {
     z-index: 1000;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 0 5%;
 }
 
 header a {
@@ -45,6 +48,7 @@ header a:hover {
     cursor: pointer;
 }
 
+
 header h1 {
     font-size: 18px;
     font-weight: 700;
@@ -54,6 +58,7 @@ header h1 {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-right: auto;
 }
 
 #logo-img-container {
@@ -72,6 +77,7 @@ section {
     min-height: 100vh;
     padding-top: var(--header-height);
     background-color: #111111;
+    box-sizing: border-box;
 }
 
 #home {
