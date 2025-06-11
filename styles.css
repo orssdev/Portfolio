@@ -1,5 +1,5 @@
 :root {
-    --header-height: 75px;
+    --header-height: 100px;
     --main-font: 'Source Sans Pro', sans-serif;
 }
 
@@ -78,6 +78,9 @@ section {
     padding-top: var(--header-height);
     background-color: #111111;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #home {
