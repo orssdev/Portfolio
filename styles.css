@@ -166,8 +166,14 @@ section:nth-child(even) {
         transform: rotate(-45deg) translate(5px, -6px);
     }
 }
-@media (max-width: 300px) {
+@media (max-width: 500px) {
     header nav {
+        right: -500px;
         width: 100%;
+        align-items: center;
+    }
+
+    header a {
+        margin-bottom: 3px solid red;
     }
 }
