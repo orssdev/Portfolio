@@ -38,3 +38,8 @@
     filter: brightness(0) saturate(100%) invert(19%) sepia(91%) saturate(7455%) hue-rotate(4deg) brightness(98%) contrast(112%);
     cursor: pointer;
 }
+
+.flex-column {
+    flex-direction: column;
+    gap: 50px;
+}
