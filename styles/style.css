@@ -138,7 +138,7 @@ footer {
 
 
 /* Home Section */
-#home {
+#home, #contact {
     background: linear-gradient(-45deg, #8b000080, #00000080, #8b000080);
     background-size: 400% 400%;
     animation: gradientBG 6s ease infinite;
@@ -286,6 +286,27 @@ footer {
     width: 150px;
 }
 
+#contact-container {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#email {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#email a{
+    color: white;
+}
 
 @media (max-width: 1100px) {
     .hamburger {
