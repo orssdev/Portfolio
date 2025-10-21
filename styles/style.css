@@ -131,6 +131,9 @@ section:nth-child(even) {
 footer {
     height: 100px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -245,6 +248,42 @@ footer {
     font-weight: 700;
     font-size: 18px;
     text-align: justify;
+}
+
+/* Skills Section */
+#skills-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+#my-skills {
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#tech-stack-container {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+#stack-icons {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stack-icon {
+    width: 150px;
 }
 
 
