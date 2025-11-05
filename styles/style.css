@@ -18,6 +18,7 @@ body {
     width: 100vw;
     background-color: black;
     color: white;
+    overflow-x: hidden;
 }
 
 header {
@@ -42,11 +43,16 @@ header nav a {
     font-size: 24px;
     padding: 20px;
     font-weight: 900;
+    transition: color 0.3s ease;
 }
 
 header nav a:hover {
     color: red;
     cursor: pointer;
+}
+
+header nav a.active-link {
+    color: red;
 }
 
 
@@ -227,16 +233,18 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 50px;
+    width: 90%;
+    max-width: 1400px;
 }
 
 #about-summary-container {
     width: 600px;
-    height: 500px;
+    min-height: 500px;
 }
 
 #about-cred {
     width: 600px;
-    height: 500px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -253,14 +261,16 @@ footer {
 /* Skills Section */
 #skills-container{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 50px;
+    width: 90%;
+    max-width: 1400px;
 }
 
 #my-skills {
     width: 300px;
-    height: 500px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -268,7 +278,7 @@ footer {
 
 #tech-stack-container {
     width: 900px;
-    height: 500px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -284,6 +294,83 @@ footer {
 
 .stack-icon {
     width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.stack-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Projects Section */
+#projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    width: 90%;
+    max-width: 1400px;
+    padding: 20px;
+}
+
+.project-card {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 300px;
+    background-color: rgba(139, 0, 0, 0.1);
+}
+
+.project-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-header h2 {
+    font-size: 24px;
+    color: red;
+}
+
+.project-tech {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.project-description {
+    line-height: 1.8;
+    color: #cccccc;
+    flex-grow: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+}
+
+.project-link {
+    color: red;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: 2px solid red;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.project-link:hover {
+    background-color: red;
+    color: white;
+    transform: translateY(-2px);
 }
 
 #contact-container {
@@ -306,6 +393,106 @@ footer {
 
 #email a{
     color: white;
+    font-weight: 700;
+}
+
+#email a:hover {
+    color: red;
+}
+
+/* Scroll to top button */
+#scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(139, 0, 0, 0.8);
+    border: 2px solid red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scroll-top:hover {
+    background-color: red;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px red;
+}
+
+#scroll-top::before {
+    content: '↑';
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Loading animation optimization */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+    a, button, .hamburger {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+@media (max-width: 1400px) {
+    #home-info-container {
+        width: 90%;
+        height: auto;
+        min-height: 450px;
+    }
+
+    #home-img-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    #links {
+        width: 300px;
+    }
+
+    .info {
+        font-size: 48px;
+    }
+
+    #about-container,
+    #skills-container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    #about-summary-container,
+    #about-cred,
+    #my-skills,
+    #tech-stack-container {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    #stack-icons {
+        gap: 30px;
+    }
+
+    .stack-icon {
+        width: 100px;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -328,14 +515,15 @@ footer {
         right: -300px;
         height: 100vh;
         width: 300px;
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0,0,0,0.95);
         backdrop-filter: blur(10px);
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
         padding-top: var(--header-height);
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s ease-in-out;
         align-items: center;
+        border-left: 2px solid red;
     }       
 
     header nav.active {
@@ -353,14 +541,210 @@ footer {
     .hamburger.active .bar:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -6px);
     }
+
+    .nav-link {
+        width: 250px;
+        margin-bottom: 10px;
+    }
 }
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 80px;
+    }
+
+    header {
+        height: var(--header-height);
+        padding: 0 3%;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    #header-logo-container {
+        width: 150px;
+        height: 60px;
+        padding-left: 15px;
+        gap: 10px;
+    }
+
+    #logo-img-container {
+        width: 40px;
+        height: 40px;
+    }
+
+    #home {
+        flex-direction: column;
+        padding: calc(var(--header-height) + 20px) 20px 40px;
+    }
+
+    #home-info-container {
+        padding: 30px;
+        height: auto;
+        min-height: auto;
+    }
+
+    .info {
+        font-size: 32px;
+    }
+
+    #intro h3 {
+        font-size: 16px;
+    }
+
+    #home-img-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    #links {
+        width: 250px;
+        height: 80px;
+    }
+
+    #other {
+        gap: 30px;
+    }
+
+    section {
+        padding-top: calc(var(--header-height) + 20px);
+    }
+
+    #about-summary {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    #about h1,
+    #skills h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    #about-cred h2 {
+        font-size: 20px;
+    }
+
+    #about-cred h3 {
+        font-size: 16px;
+    }
+
+    #my-skills h2 {
+        text-align: center;
+    }
+
+    #tech-stack-container h2 {
+        text-align: center;
+    }
+
+    .stack-icon {
+        width: 80px;
+    }
+
+    #projects-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .project-card {
+        padding: 25px;
+    }
+
+    #projects h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    #contact-container h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    #contact-container h3 {
+        font-size: 16px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    #email {
+        width: 150px;
+        height: 60px;
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 500px) {
     header nav {
-        right: -500px;
+        right: -100vw;
         width: 100%;
     }
 
+    .nav-link {
+        width: 80%;
+    }
+
     header nav a {
-        margin-bottom: 3px solid red;
+        font-size: 20px;
+    }
+
+    #home-info-container {
+        padding: 20px;
+    }
+
+    .info {
+        font-size: 24px;
+    }
+
+    #intro h3 {
+        font-size: 14px;
+    }
+
+    #home-info-container > h3 {
+        font-size: 14px;
+    }
+
+    #home-img-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    #links {
+        width: 200px;
+    }
+
+    .icon-link {
+        width: 40px;
+    }
+
+    #about-summary-container,
+    #about-cred,
+    #tech-stack-container {
+        padding: 0 20px;
+    }
+
+    .stack-icon {
+        width: 60px;
+    }
+
+    #stack-icons {
+        gap: 20px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .project-header h2 {
+        font-size: 20px;
+    }
+
+    .tech-tag {
+        font-size: 12px;
+        padding: 4px 12px;
+    }
+
+    .project-description {
+        font-size: 14px;
     }
 }

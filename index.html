@@ -40,7 +40,7 @@
                 <a href="#contact">CONTACT</a>
             </div>
         </nav>
-        <div class="hamburger frame" id="hamburger">
+        <div class="hamburger frame" id="hamburger" aria-label="Menu" role="button" tabindex="0">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -126,8 +126,51 @@
             </div>
          </div>
     </section>
-    <section id="projects">
-         <p>Content coming soon!</p>
+    <section id="projects" class="flex-column">
+         <h1>Projects</h1>
+         <div id="projects-container">
+            <div class="project-card frame">
+                <div class="project-header">
+                    <h2>Portfolio Website</h2>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                <p class="project-description">
+                    A responsive personal portfolio website showcasing my skills, projects, and experience. 
+                    Features smooth animations, mobile-friendly design, and modern UI/UX principles.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/orssdev" target="_blank" class="project-link">View Code</a>
+                </div>
+            </div>
+            <div class="project-card frame">
+                <div class="project-header">
+                    <h2>Coming Soon</h2>
+                    <div class="project-tech">
+                        <span class="tech-tag">TBD</span>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Exciting new projects are in development. Check back soon for updates on my latest work 
+                    in web development, data science, and software engineering.
+                </p>
+            </div>
+            <div class="project-card frame">
+                <div class="project-header">
+                    <h2>More Projects</h2>
+                    <div class="project-tech">
+                        <span class="tech-tag">Various</span>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Exploring various technologies and building solutions to real-world problems. 
+                    More projects will be added as they are completed.
+                </p>
+            </div>
+         </div>
     </section>
     <section id="contact">
         <div id="contact-container" class="frame-black">
@@ -139,5 +182,6 @@
     <footer>
         <p>© 2025 All Rights Reserved</p>
     </footer>
+    <div id="scroll-top" aria-label="Scroll to top" role="button" tabindex="0"></div>
 </body>
 </html>
