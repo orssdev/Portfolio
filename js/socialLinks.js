@@ -26,7 +26,8 @@ export function initSocialLinks() {
         const socialId = this.id;
         const urls = {
             github: 'https://github.com/orssdev',
-            linkedin: 'https://www.linkedin.com/in/orssdev'
+            linkedin: 'https://www.linkedin.com/in/orssdev',
+            resume: 'https://portfollio.orss.dev/assets/Resume.pdf'
         };
 
         if (urls[socialId]) {

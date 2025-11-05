@@ -67,6 +67,30 @@
     width: 50px;
 }
 
+.resume-button {
+    padding: 12px 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.resume-button:hover {
+    transform: translate(0, -4px);
+    border: 2px solid red;
+    box-shadow: 
+        0 0 5px red,
+        0 0 10px red,
+        0 0 15px red,
+        0 12px 40px rgba(0, 0, 0, 0.8);
+}
+
 /* Gradient animation for home section */
 @keyframes gradientBG {
     0% {
