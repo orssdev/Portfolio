@@ -10,6 +10,8 @@
     width: 90%;
     max-width: 1400px;
     flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 0 20px;
 }
 
 #my-skills {
@@ -23,6 +25,8 @@
     padding: 40px;
     border-radius: 15px;
     border: 1px solid rgba(255, 0, 0, 0.15);
+    box-sizing: border-box;
+    width: 100%;
 }
 
 #my-skills h2 {
@@ -65,6 +69,8 @@
     padding: 40px;
     border-radius: 15px;
     border: 1px solid rgba(255, 0, 0, 0.15);
+    box-sizing: border-box;
+    width: 100%;
 }
 
 #tech-stack-container h2 {
@@ -79,6 +85,7 @@
     width: 100%;
     max-width: 800px;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .stack-icon {

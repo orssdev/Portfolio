@@ -8,14 +8,17 @@
     animation: gradientBG 6s ease infinite;
     color: white;
     gap: 25px;
+    overflow-x: hidden;
 }
 
 #home-img-container {
     width: 400px;
     height: 400px;
+    max-width: 90%;
     overflow: hidden;
     border-radius: 15px;
     border: 2px solid rgba(255, 0, 0, 0.2);
+    box-sizing: border-box;
 }
 
 #home-img-container img {
@@ -25,6 +28,7 @@
 #home-info-container {
     height: 550px;
     width: 800px;
+    max-width: 90%;
     box-sizing: border-box;
     padding: 50px;
     display: flex;
@@ -35,6 +39,7 @@
 
 .info {
     font-size: 64px;
+    word-wrap: break-word;
 }
 
 #intro {

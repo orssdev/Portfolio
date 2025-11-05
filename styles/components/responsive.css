@@ -114,9 +114,15 @@
         --header-height: 80px;
     }
 
+    * {
+        max-width: 100%;
+    }
+
     header {
         height: var(--header-height);
         padding: 0 3%;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     header h1 {
@@ -194,7 +200,9 @@
     #my-skills {
         width: 100%;
         max-width: 100%;
-        padding: 30px;
+        padding: 30px 20px;
+        margin: 0;
+        box-sizing: border-box;
     }
 
     #my-skills h2 {
@@ -205,7 +213,9 @@
     #tech-stack-container {
         width: 100%;
         max-width: 100%;
-        padding: 30px;
+        padding: 30px 20px;
+        margin: 0;
+        box-sizing: border-box;
     }
 
     #tech-stack-container h2 {
@@ -217,6 +227,8 @@
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         gap: 25px;
         padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .stack-icon {
@@ -229,6 +241,8 @@
         grid-template-columns: 1fr;
         padding: 10px;
         gap: 25px;
+        width: 95%;
+        box-sizing: border-box;
     }
     
     .project-card:last-child:nth-child(odd) {
@@ -239,6 +253,8 @@
     .project-card {
         padding: 28px;
         min-height: 280px;
+        max-width: 100%;
+        width: 100%;
     }
 
     .project-header h2 {
@@ -259,6 +275,8 @@
         font-size: 16px;
         text-align: center;
         padding: 0 20px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     #contact-info {
@@ -266,21 +284,29 @@
         gap: 20px;
         width: 100%;
         padding: 0 10px;
+        box-sizing: border-box;
     }
 
     .contact-method-link {
         width: 100%;
+        max-width: 100%;
     }
 
     .contact-method {
         width: 100%;
         max-width: 350px;
         margin: 0 auto;
+        box-sizing: border-box;
+        min-width: auto;
     }
 }
 
 /* Small Mobile Devices */
 @media (max-width: 500px) {
+    * {
+        box-sizing: border-box;
+    }
+
     header nav {
         right: -100vw;
         width: 100%;
@@ -330,7 +356,9 @@
     }
 
     #my-skills {
-        padding: 25px;
+        padding: 25px 15px;
+        width: 100%;
+        margin: 0;
     }
 
     #my-skills h3 {
@@ -338,12 +366,16 @@
     }
 
     #tech-stack-container {
-        padding: 25px;
+        padding: 25px 15px;
+        width: 100%;
+        margin: 0;
     }
 
     #stack-icons {
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
         gap: 15px;
+        padding: 10px 5px;
+        width: 100%;
     }
 
     .stack-icon {
@@ -355,10 +387,12 @@
     .project-card {
         padding: 22px;
         min-height: 260px;
+        width: 100%;
     }
 
     .project-header h2 {
         font-size: 20px;
+        word-wrap: break-word;
     }
 
     .project-header h2::before {
@@ -381,7 +415,9 @@
     }
 
     #contact-container {
-        padding: 40px 20px;
+        padding: 40px 15px;
+        width: 95%;
+        box-sizing: border-box;
     }
 
     #contact-container h1 {
@@ -390,11 +426,18 @@
 
     #contact-container h3 {
         font-size: 14px;
+        padding: 0 10px;
+    }
+
+    #contact-info {
+        width: 100%;
+        padding: 0 5px;
     }
 
     .contact-method {
-        padding: 20px;
-        min-width: 160px;
+        padding: 20px 15px;
+        min-width: auto;
+        width: 100%;
     }
 
     .contact-method h4 {
@@ -403,5 +446,6 @@
 
     .contact-method p {
         font-size: 12px;
+        word-break: break-word;
     }
 }

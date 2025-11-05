@@ -13,6 +13,7 @@
     align-items: center;
     gap: 35px;
     padding: 60px 40px;
+    box-sizing: border-box;
 }
 
 #contact-container h1 {
@@ -22,6 +23,8 @@
     text-align: center;
     position: relative;
     padding-bottom: 20px;
+    word-wrap: break-word;
+    max-width: 100%;
 }
 
 #contact-container h1::after {
@@ -51,11 +54,15 @@
     margin-top: 30px;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-method-link {
     text-decoration: none;
     color: inherit;
+    flex: 0 1 auto;
 }
 
 .contact-method {
@@ -68,9 +75,12 @@
     border: 1px solid rgba(255, 0, 0, 0.2);
     border-radius: 15px;
     min-width: 200px;
+    max-width: 100%;
     transition: all 0.3s ease;
     will-change: transform;
     cursor: pointer;
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 
 .contact-method:hover {
@@ -90,6 +100,9 @@
     color: #cccccc;
     font-size: 14px;
     text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 /* Contact hover effects */

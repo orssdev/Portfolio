@@ -9,19 +9,24 @@
     gap: 50px;
     width: 90%;
     max-width: 1400px;
+    box-sizing: border-box;
 }
 
 #about-summary-container {
     width: 600px;
+    max-width: 100%;
     min-height: 500px;
+    box-sizing: border-box;
 }
 
 #about-cred {
     width: 600px;
+    max-width: 100%;
     min-height: 500px;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    box-sizing: border-box;
 }
 
 #about-summary {
@@ -30,4 +35,5 @@
     font-weight: 700;
     font-size: 18px;
     text-align: justify;
+    word-wrap: break-word;
 }
