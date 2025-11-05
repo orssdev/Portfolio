@@ -1,0 +1,110 @@
+/* ===================================
+   CONTACT SECTION STYLES
+   =================================== */
+
+#contact-container {
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding: 60px 40px;
+}
+
+#contact-container h1 {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#contact-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, red, transparent);
+    border-radius: 2px;
+}
+
+#contact-container h3 {
+    text-align: center;
+    line-height: 1.8;
+    color: #d4d4d4;
+    font-size: 18px;
+    max-width: 600px;
+    letter-spacing: 0.5px;
+}
+
+#contact-info {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-method-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 25px;
+    background-color: rgba(139, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    border-radius: 15px;
+    min-width: 200px;
+    transition: all 0.3s ease;
+    will-change: transform;
+    cursor: pointer;
+}
+
+.contact-method:hover {
+    background-color: rgba(139, 0, 0, 0.2);
+    transform: translateY(-5px);
+    border-color: red;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+}
+
+.contact-method h4 {
+    color: red;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.contact-method p {
+    color: #cccccc;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Contact hover effects */
+@media (hover: hover) and (pointer: fine) {
+    .contact-method:hover {
+        background-color: rgba(139, 0, 0, 0.2);
+        transform: translateY(-5px);
+        border-color: red;
+        box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+    }
+}
+
+@media (hover: none) {
+    .contact-method:active {
+        background-color: rgba(139, 0, 0, 0.2);
+        border-color: red;
+    }
+}

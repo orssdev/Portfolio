@@ -1,0 +1,76 @@
+/* ===================================
+   HOME SECTION STYLES
+   =================================== */
+
+#home, #contact {
+    background: linear-gradient(-45deg, #8b000080, #00000080, #8b000080);
+    background-size: 400% 400%;
+    animation: gradientBG 6s ease infinite;
+    color: white;
+    gap: 25px;
+}
+
+#home-img-container {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 0, 0, 0.2);
+}
+
+#home-img-container img {
+    width: 100%;
+}
+
+#home-info-container {
+    height: 550px;
+    width: 800px;
+    box-sizing: border-box;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.info {
+    font-size: 64px;
+}
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#other {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#links {
+    height: 100px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.icon-link {
+    width: 50px;
+}
+
+/* Gradient animation for home section */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
