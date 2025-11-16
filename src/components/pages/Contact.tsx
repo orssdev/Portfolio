@@ -1,6 +1,6 @@
 export default function Contact() {
     return (
-        <section className="page bg-grad">
+        <section id="contact" className="page bg-grad">
 
         </section>
     );

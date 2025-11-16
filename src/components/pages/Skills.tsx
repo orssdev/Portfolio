@@ -1,6 +1,6 @@
 export default function Skills() {
     return (
-        <section className="page">
+        <section id="skills" className="page">
 
         </section>
     );

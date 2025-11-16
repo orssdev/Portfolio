@@ -4,7 +4,7 @@ import linkedinIcon from '../../assets/icons8-linkedin-500.png';
 
 export default function Welcome() {
     return (
-        <section className="page bg-grad flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-12 lg:gap-[50px] px-4 md:px-8 py-8 lg:py-0">
+        <section id="welcome" className="page bg-grad flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-12 lg:gap-[50px] px-4 md:px-8 py-8 lg:py-0">
             <div className="w-full max-w-[90%] md:max-w-[600px] lg:max-w-[700px] xl:max-w-[800px] min-h-[400px] md:h-auto lg:h-[550px] btb p-6 md:p-8 lg:p-[50px] flex flex-col justify-center gap-6 md:gap-8 lg:gap-[50px]">
                 <div className="flex flex-col">
                     <h3 className="text-sm md:text-base lg:text-[18px] font-bold text-white mb-3">Hello, my name is</h3>
