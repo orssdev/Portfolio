@@ -1,7 +1,11 @@
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+
 export default function Skills() {
+    const { elementRef, isVisible } = useScrollAnimation();
+
     return (
         <section id="skills" className="page flex flex-col items-center justify-center px-6 md:px-12 lg:px-20 py-8 pt-20 md:pt-24">
-            <div className="max-w-[1200px] w-full">
+            <div ref={elementRef} className={`max-w-[1200px] w-full transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <div className="text-center mb-8 md:mb-10">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-wider">
                         SKILLS
@@ -10,8 +14,8 @@ export default function Skills() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-6 lg:gap-8">
-                    <div className="space-y-4">
-                        <div className="btb p-5 md:p-6 border border-[rgba(255,0,0,0.15)] hover:border-[rgba(255,0,0,0.4)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,0,0,0.15)] group">
+                    <div className={`space-y-4 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`} style={{ transitionDelay: '200ms' }}>
+                        <div className="btb p-5 md:p-6 border border-[rgba(255,0,0,0.15)] hover:border-[rgba(255,0,0,0.4)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,0,0,0.15)] hover:scale-[1.02] group">
                             <div className="flex items-center gap-3 mb-5">
                                 <div className="w-1 h-8 bg-gradient-to-b from-[#FF0000] to-transparent"></div>
                                 <h3 className="text-xl md:text-2xl font-bold text-[#FF0000] group-hover:text-white transition-colors duration-300">
@@ -34,7 +38,7 @@ export default function Skills() {
                             </ul>
                         </div>
 
-                        <div className="btb p-5 md:p-6 border border-[rgba(255,0,0,0.15)] hover:border-[rgba(255,0,0,0.4)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,0,0,0.15)] group">
+                        <div className="btb p-5 md:p-6 border border-[rgba(255,0,0,0.15)] hover:border-[rgba(255,0,0,0.4)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,0,0,0.15)] hover:scale-[1.02] group">
                             <div className="flex items-center gap-3 mb-5">
                                 <div className="w-1 h-8 bg-gradient-to-b from-[#FF0000] to-transparent"></div>
                                 <h3 className="text-xl md:text-2xl font-bold text-[#FF0000] group-hover:text-white transition-colors duration-300">
@@ -61,7 +65,7 @@ export default function Skills() {
                             </ul>
                         </div>
                     </div>
-                    <div className="btb p-5 md:p-6 border border-[rgba(255,0,0,0.15)] hover:border-[rgba(255,0,0,0.4)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,0,0,0.15)] group h-fit">
+                    <div className={`btb p-5 md:p-6 border border-[rgba(255,0,0,0.15)] hover:border-[rgba(255,0,0,0.4)] transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,0,0,0.15)] hover:scale-[1.02] group h-fit ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`} style={{ transitionDelay: '400ms' }}>
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-1 h-8 bg-gradient-to-b from-[#FF0000] to-transparent"></div>
                             <h3 className="text-xl md:text-2xl font-bold text-[#FF0000] group-hover:text-white transition-colors duration-300">

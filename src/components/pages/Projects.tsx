@@ -1,6 +1,9 @@
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import ProjectCard from "../ProjectCard";
 
 export default function Projects() {
+    const { elementRef, isVisible } = useScrollAnimation();
+    
     const projects = [
         {
             title: "Media Logger",
@@ -70,8 +73,8 @@ export default function Projects() {
     ];
 
     return (
-        <section id="projects" className="page flex flex-col items-center justify-center px-6 md:px-12 lg:px-20 py-8 md:pt-24">
-            <div className="max-w-[1200px] w-full pt-[25px]">
+        <section id="projects" className="page flex flex-col items-center justify-center px-6 md:px-12 lg:px-20 py-8 pt-20 md:pt-24">
+            <div ref={elementRef} className={`max-w-[1200px] w-full transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <div className="text-center mb-8 md:mb-10">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-wider">
                         PROJECTS
@@ -79,9 +82,18 @@ export default function Projects() {
                     <div className="w-24 h-1.5 bg-gradient-to-r from-transparent via-[#FF0000] to-transparent mx-auto shadow-[0_0_10px_#FF0000]"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 transition-all duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
                     {projects.map((project, index) => (
-                        <ProjectCard
+                        <div
+                            key={index}
+                            className="transition-all duration-500 hover:scale-[1.02]"
+                            style={{ 
+                                transitionDelay: isVisible ? `${index * 100 + 300}ms` : '0ms',
+                                opacity: isVisible ? 1 : 0,
+                                transform: isVisible ? 'translateY(0)' : 'translateY(20px)'
+                            }}
+                        >
+                            <ProjectCard
                             key={index}
                             title={project.title}
                             tech={project.tech}
@@ -89,6 +101,7 @@ export default function Projects() {
                             link={project.link}
                             status={project.status}
                         />
+                        </div>
                     ))}
                 </div>
             </div>

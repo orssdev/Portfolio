@@ -1,7 +1,11 @@
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+
 export default function Contact() {
+    const { elementRef, isVisible } = useScrollAnimation();
+
     return (
         <section id="contact" className="page bg-grad flex flex-col items-center justify-center px-6 md:px-12 lg:px-20 py-8 pt-20 md:pt-24">
-            <div className="max-w-[900px] w-full pt-[25px]">
+            <div ref={elementRef} className={`max-w-[900px] w-full transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <div className="text-center mb-8 md:mb-10">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-wider">
                         CONTACT
@@ -9,7 +13,7 @@ export default function Contact() {
                     <div className="w-24 h-1.5 bg-gradient-to-r from-transparent via-[#FF0000] to-transparent mx-auto shadow-[0_0_10px_#FF0000]"></div>
                 </div>
 
-                <div className="btb p-8 md:p-10 lg:p-12 border border-[rgba(255,0,0,0.15)] hover:border-[rgba(255,0,0,0.4)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,0,0,0.15)]">
+                <div className={`btb p-8 md:p-10 lg:p-12 border border-[rgba(255,0,0,0.15)] hover:border-[rgba(255,0,0,0.4)] transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,0,0,0.15)] hover:scale-[1.02] ${isVisible ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
                     <div className="text-center mb-10">
                         <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
                             Let's Connect!

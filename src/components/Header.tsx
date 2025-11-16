@@ -1,8 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import picture from '../assets/oscar.webp';
 
 export default function Header(){
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('welcome');
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ['welcome', 'about', 'skills', 'projects', 'contact'];
+            const scrollPosition = window.scrollY + 150;
+
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const offsetTop = element.offsetTop;
+                    const offsetBottom = offsetTop + element.offsetHeight;
+
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+                        setActiveSection(section);
+                        break;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -12,11 +38,21 @@ export default function Header(){
         setIsMenuOpen(false);
     };
 
+    const getButtonClass = (section: string) => {
+        const baseClass = "h-[60px] px-6 lg:px-8 rtb border text-lg lg:text-xl font-bold transition-all duration-300";
+        const isActive = activeSection === section;
+        
+        if (isActive) {
+            return `${baseClass} border-[#FF0000] bg-[rgba(255,0,0,0.2)] text-white shadow-[0_0_10px_rgba(255,0,0,0.5)] scale-105`;
+        }
+        
+        return `${baseClass} border-[rgba(255,0,0,0.2)] text-white hover:-translate-y-1 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000,0_12px_40px_rgba(0,0,0,0.8)]`;
+    };
+
     return (
         <>
-            <header className="fixed top-0 w-full h-[100px] bg-black/50 backdrop-blur-md px-6 z-50 border-b-2 border-[#ff0000]">
+            <header className="fixed top-0 w-full h-[100px] bg-black/50 backdrop-blur-md px-6 z-50 border-b-2 border-[#ff0000] transition-all duration-300">
                 <div className="h-full flex items-center justify-between max-w-[1400px] mx-auto">
-                    {/* Left side - Profile Picture and Name */}
                     <button
                         onClick={() => scrollToSection('welcome')}
                         className="flex items-center gap-4 h-[60px] px-6 md:px-8 rtb border border-[rgba(255,0,0,0.2)] text-white font-bold transition-all duration-300 hover:-translate-y-1 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000,0_12px_40px_rgba(0,0,0,0.8)]"
@@ -27,35 +63,21 @@ export default function Header(){
                         <span className="text-xl md:text-2xl tracking-wider">ORSS</span>
                     </button>
 
-                    {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-4 lg:gap-6">
-                        <button
-                            onClick={() => scrollToSection('about')}
-                            className="h-[60px] px-6 lg:px-8 rtb border border-[rgba(255,0,0,0.2)] text-white text-lg lg:text-xl font-bold transition-all duration-300 hover:-translate-y-1 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000,0_12px_40px_rgba(0,0,0,0.8)]"
-                        >
+                        <button onClick={() => scrollToSection('about')} className={getButtonClass('about')}>
                             About
                         </button>
-                        <button
-                            onClick={() => scrollToSection('skills')}
-                            className="h-[60px] px-6 lg:px-8 rtb border border-[rgba(255,0,0,0.2)] text-white text-lg lg:text-xl font-bold transition-all duration-300 hover:-translate-y-1 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000,0_12px_40px_rgba(0,0,0,0.8)]"
-                        >
+                        <button onClick={() => scrollToSection('skills')} className={getButtonClass('skills')}>
                             Skills
                         </button>
-                        <button
-                            onClick={() => scrollToSection('projects')}
-                            className="h-[60px] px-6 lg:px-8 rtb border border-[rgba(255,0,0,0.2)] text-white text-lg lg:text-xl font-bold transition-all duration-300 hover:-translate-y-1 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000,0_12px_40px_rgba(0,0,0,0.8)]"
-                        >
+                        <button onClick={() => scrollToSection('projects')} className={getButtonClass('projects')}>
                             Projects
                         </button>
-                        <button
-                            onClick={() => scrollToSection('contact')}
-                            className="h-[60px] px-6 lg:px-8 rtb border border-[rgba(255,0,0,0.2)] text-white text-lg lg:text-xl font-bold transition-all duration-300 hover:-translate-y-1 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000,0_12px_40px_rgba(0,0,0,0.8)]"
-                        >
+                        <button onClick={() => scrollToSection('contact')} className={getButtonClass('contact')}>
                             Contact
                         </button>
                     </nav>
 
-                    {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="md:hidden h-[60px] w-[60px] rtb border border-[rgba(255,0,0,0.2)] text-white font-bold transition-all duration-300 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000] flex flex-col items-center justify-center gap-1.5"
@@ -67,35 +89,22 @@ export default function Header(){
                 </div>
             </header>
 
-            {/* Mobile Side Menu */}
             <div
                 className={`fixed top-0 right-0 h-screen w-full bg-black/50 backdrop-blur-md border-l-2 border-[#ff0000] z-40 transition-transform duration-300 ease-in-out md:hidden ${
                     isMenuOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
             >
                 <nav className="flex flex-col gap-6 pt-[140px] px-8">
-                    <button
-                        onClick={() => scrollToSection('about')}
-                        className="h-[60px] px-8 rtb border border-[rgba(255,0,0,0.2)] text-white text-xl font-bold transition-all duration-300 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000]"
-                    >
+                    <button onClick={() => scrollToSection('about')} className={getButtonClass('about')}>
                         About
                     </button>
-                    <button
-                        onClick={() => scrollToSection('skills')}
-                        className="h-[60px] px-8 rtb border border-[rgba(255,0,0,0.2)] text-white text-xl font-bold transition-all duration-300 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000]"
-                    >
+                    <button onClick={() => scrollToSection('skills')} className={getButtonClass('skills')}>
                         Skills
                     </button>
-                    <button
-                        onClick={() => scrollToSection('projects')}
-                        className="h-[60px] px-8 rtb border border-[rgba(255,0,0,0.2)] text-white text-xl font-bold transition-all duration-300 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000]"
-                    >
+                    <button onClick={() => scrollToSection('projects')} className={getButtonClass('projects')}>
                         Projects
                     </button>
-                    <button
-                        onClick={() => scrollToSection('contact')}
-                        className="h-[60px] px-8 rtb border border-[rgba(255,0,0,0.2)] text-white text-xl font-bold transition-all duration-300 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000]"
-                    >
+                    <button onClick={() => scrollToSection('contact')} className={getButtonClass('contact')}>
                         Contact
                     </button>
                 </nav>
