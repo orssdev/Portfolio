@@ -30,7 +30,7 @@ export default function Welcome() {
                     <a href="https://linkedin.com/in/orssdev" target="_blank" rel="noopener noreferrer" className="w-10 md:w-12 lg:w-[50px] cursor-pointer transition-all duration-300 hover:scale-110">
                         <img src={linkedinIcon} alt="LinkedIn" className="w-full" style={{filter: 'brightness(0) saturate(100%) invert(19%) sepia(91%) saturate(7455%) hue-rotate(4deg) brightness(98%) contrast(112%)'}} />
                     </a>
-                    <a href="https://linkedin.com/in/orssdev" target="_blank" rel="noopener noreferrer" className="px-4 py-2 md:px-6 md:py-3 rtb border border-[rgba(255,0,0,0.2)] text-white text-sm md:text-base font-bold transition-all duration-300 hover:-translate-y-1 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000,0_12px_40px_rgba(0,0,0,0.8)]">
+                    <a href="https://orss.dev/orssdev/Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2 md:px-6 md:py-3 rtb border border-[rgba(255,0,0,0.2)] text-white text-sm md:text-base font-bold transition-all duration-300 hover:-translate-y-1 hover:border-2 hover:border-[#FF0000] hover:shadow-[0_0_5px_#FF0000,0_0_10px_#FF0000,0_0_15px_#FF0000,0_12px_40px_rgba(0,0,0,0.8)]">
                         Resume
                     </a>
                 </div>
